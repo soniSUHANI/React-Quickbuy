@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 //Database connection with mongodb
-mongoose.connect("mongodb+srv://QuickBuydb:SoniSuhani@cluster0.gvap2zl.mongodb.net/e-commerce")
+mongoose.connect("mongodb+srv://DBname:password@cluster0.gvap2zl.mongodb.net/e-commerce")
 
 // API creation
 
