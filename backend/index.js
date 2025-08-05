@@ -1,17 +1,24 @@
 const port = 4000;
 const express = require("express");
 const app = express();
+require('dotenv').config();
 const mongoose = require("mongoose");
 const jwt = require("jsonwebtoken");
 const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
 
+
 app.use(express.json());
 app.use(cors());
 
 //Database connection with mongodb
-mongoose.connect("mongodb+srv://DBname:password@cluster0.gvap2zl.mongodb.net/e-commerce")
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => console.log("MongoDB connected"))
+.catch((err) => console.log(err));
 
 // API creation
 
